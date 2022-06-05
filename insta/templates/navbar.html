@@ -11,7 +11,7 @@
     {% if user.is_authenticated %}
       <ul class="navbar-nav m-auto px-1">
           <li class="nav-item active">
-              <a class="nav-link" href="{% url 'index'%}"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'index'%}"><i class="fas fa-home"></i> <span class="sr-only"></span></a>
           </li>
           <form class="form-inline my-2 my-lg-0 d-flex" action="{% url 'search_results' %}">
               <input class="form-control mr-sm-2 place" name="search_user"  type="search" placeholder="Search" aria-label="Search">

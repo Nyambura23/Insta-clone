@@ -18,6 +18,8 @@ from django.urls import include,path
 from django.contrib.auth import views 
 from django.contrib.auth.views import LoginView, logout_then_login, LogoutView
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('insta.urls')),
