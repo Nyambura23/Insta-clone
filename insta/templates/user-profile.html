@@ -1,0 +1,69 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static%}
+{% block content%}
+
+{% for profile in profiles %}
+<div class="container bio-space">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+           
+            <img class="prof-pic" src="{{ profile.profile_photo.url}}" alt="">
+            
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h5><i class="fas px-3 fa-user-astronaut"></i>{{ profile.user }}</h5>
+            {% if profile.bio %}
+            <p><i class="far px-3 fa-file-alt"></i>{{ profile.bio }}</p>
+            {% else %}
+            <p>Update your profile </p>
+            {% endif %}
+        </div>
+        
+    </div>
+
+
+</div>
+{% endfor %}
+
+<div class="container profile-display text-center">
+    <p style="color:#2E4C6D">POSTS</p>
+    <div class="row">
+        {% for image in images %}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            {% if image.image %}
+            <a href="" data-toggle="modal" data-target="#myModal{{ image.id }}"> <img class="user-image"
+                    src="{{image.image.url}}" alt=""></a>
+            {% else %}
+            <p>No Posts</p>
+            {% endif %}
+        </div>
+        <div id="myModal{{image.id}}" class="modal fade text-center p-2" role="dialog" style="color:000">
+            <div class="modal-dialog">
+                <div class="modal-content mbody w3-black">
+                    <div class="modal-header">
+                        <strong>
+                            <p class="p-2"> {{image.name}}</p>
+                        </strong>
+                        <p class="p-2"><i class="fas fa-map-marker-alt"></i> <strong>{{image.location}}.</strong></p>
+                    </div>
+                    <div class="modal-body p-2">
+                        <img src="{{image.image.url}}" class="modal-pic">
+
+                        <p>{{image.caption}}</p>
+                    </div>
+                    <footer>
+
+                        <button type="button" class="btn login-btn btn-modal" data-dismiss="modal">Close</button>
+
+
+
+                    </footer>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

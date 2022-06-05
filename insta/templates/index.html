@@ -1,0 +1,89 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static%}
+{% block content%}
+
+
+<div class="container">
+    <div class="row">
+        {% for post in images %}
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card" style="width: 50%;">
+                <div class="d-flex justify-content-between">
+                <a class=" user-tag" href="{% url 'profile' post.user.id %}"><p class="card-text"><i class="fas px-3 fa-user-astronaut"></i>{{post.user}}</p></a>
+                <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{post.location}}</p>
+            </div>
+                {% if post.image %}
+                <a href="" class="text-center" data-toggle="modal" data-target="#myModal{{ post.id }}"><img
+                        class="card-img-top posted-image text-center" src="{{post.image.url}}" alt="Card image cap"></a>
+                {% else %}
+                <p>No Image</p>
+                {% endif %}
+                <div class="card-body">
+                    <p class="card-text text-muted"><i class="far fa-calendar-alt me-2"></i>{{post.posted_at}}</p>
+                    <p class="card-text text-muted">"{{post.caption}}"</p>
+                    <!-- <a href=""><i class="far fa-comment-alt me-1"></i></a> -->
+                    <div class="d-flex text-center">
+                        <a href="{% url 'like' image_id=post.id%}"><i class="far fa-heart" style="color: red"></i></a>
+                        <p class="px-2 pt-1">{{post.saved_likes}}</p>
+                    </div>
+                    <form action="{% url 'comments' image_id=post.id%}" class="comment-form" method="post"
+                        enctype="multipart/form-data">
+
+                        {% csrf_token%}
+                        {% bootstrap_form form %}
+                        <div class="form-group text-center">
+                            <input type="submit" class="btn btn-primary login-btn" value="Comment">
+                        </div>
+                        <input type="hidden" name="next" value="{{next}}">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="myModal{{post.id}}" class="modal fade text-center" role="dialog" style="color:000">
+            <div class="modal-dialog">
+                <div class="modal-content mbody w3-black">
+                    <div class="modal-header">
+                        <strong>
+                            <p class="p-2"> {{post.name}}</p>
+                        </strong>
+                        <p class="p-2"><i class="fas fa-map-marker-alt"></i> <strong>{{post.location}}.</strong></p>
+                    </div>
+                    <div class="modal-body p-2">
+                        <img src="{{post.image.url}}" class="modal-pic">
+                        <p>"{{post.caption}}"</p>
+                        <div class="text-start">
+
+                            <p>COMMENTS:</p>
+                            {% for comment in post.saved_comments %}
+
+                            <p> <span><strong>{{comment.user}}</strong></span>: {{comment.comment}}</p>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <footer>
+                        <button id="copy-text-btn" class="btn login-btn btn-modal"
+                            onclick="copyLink('{{post.id}}.url')">Copy Image Link</button>
+                        <button type="button" class="btn login-btn btn-modal" data-dismiss="modal">Close</button>
+
+                        <input class="form-control place input-lg text-center" type="text" value="{{post.image.url}}"
+                            id="{{post.id}}.url">
+
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+<script>
+    function copyLink(element) {
+        var copyText = document.getElementById(element);
+        copyText.select();
+        document.execCommand("copy");
+    }
+</script>
+{% endblock%}

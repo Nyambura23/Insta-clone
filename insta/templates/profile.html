@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static%}
+{% block content%}
+
+<div class="container profile-display">
+    <div class="row">
+        <strong><p class="text-center">PROFILE</p></strong>
+        {% for profile in profiles %}
+        <div class="col-lg-4 col-md-6 col-sml-12">
+            
+             <img class="prof-display mb-2" src="{{profile.profile_photo.url}}" alt="Update profile to view">
+           <p>{{profile.user}}</p>
+            <p><i class="far px-3 fa-file-alt"></i>{{profile.bio}}</p>
+
+            
+        </div>
+        {% endfor %}
+    </div>
+<hr>
+
+
+</div>
+<div class="container profile-display">
+    <div class="row">
+    <strong> <p class="text-center">POSTS</p></strong>
+        {% for image in images %}
+        <div class="col-lg-4 col-md-6 col-sml-12">
+            {% if image.image %}
+            <img class="user-image" src="{{image.image.url}}" alt="">
+            {% else %}
+            <p>No Posts</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+</div>
+
+{% endblock %}

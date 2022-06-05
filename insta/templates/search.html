@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{% load static %}
+{% load bootstrap3 %}
+{% block content %}
+
+<div class="container">
+    
+    <div class="row m-5">
+        
+        {% if users%}
+        
+        <p>We have found <strong>{{ users|length }} </strong>user by the name
+            <strong><a href="{% url 'profile' user.id %}">{{message}}</a></strong><span><img class="prof-display " src="{{user.profile_photo.url}}" alt=""></span></p>
+        {% else %}
+        <p> We have found <strong>0</strong> users by the name <strong>"{{message}}"</strong>. Please check you
+            have submitted the right term.<a class="text-dark" href="{% url 'index' %}">Search again</a></p>
+        {% endif %}
+        
+   
+    </div>
+    <div>
+     
+    </div>
+   
+    {% endblock %}
