@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to the Insta-clone. You will connect with your friends by sharing pictures.
