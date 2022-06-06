@@ -70,7 +70,6 @@
                     </div>
                     <form action="{% url 'comments' image_id=post.id%}" class="comment-form" method="post"
                         enctype="multipart/form-data">
-
                         {% csrf_token%}
                         {% bootstrap_form form %}
                         <div class="form-group text-center">
