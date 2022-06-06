@@ -1,8 +1,7 @@
 p {
-  color: #4c68d7;
-  font-family: 'Joan', serif;
+  font-family: 'Tai Heritage Pro', serif;
+  font-size: 20px;
 }
-
 .bowdy{
   display: flex;
   flex-direction: column;
@@ -13,117 +12,52 @@ p {
   background-size: cover;
   height: 100vh; 
 }
-
 .login-section,
 .registration-section, .comment-form {
-  color: #423F3E;
-  font-size: smaller;
+  color: white;
 }
-
 .login-body{
   width: 350px;
   margin: 15% auto 0 auto;
   padding: 7%;
   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
-
 }
-
-.login-page {
-  padding: 5%;
-  background: linear-gradient(90deg, #4c68d7 50%, #fff 50%);
-  height: 100vh;
-
-}
-
-.login-pic {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-  box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.2), 0 11px 25px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 50%;
-}
-
-.login-btn {
-  font-family: 'Joan', serif;
+.login-btn, .register-btn, .comment-btn, .log-btn{
   color: #fff;
-  font-size: smaller;
+  font-size: 25px;
   width: 150px;
   margin: 2%;
-  background-color: #fbad50;
+  background-color: #4c68d7;
   padding: 2%;
-  border: 1px solid #fbad50;
-
+  border: 1px solid #4c68d7;
 }
-
-.login-btn:hover {
-  background-color: #fff;
-  color: black;
-  border: 1px solid black;
+.login-btn:hover, .register-btn:hover, .comment-btn:hover, .log-btn:hover  {
+  background-color:#bc2a8d;
+  color: white;
+  border: 1px solid white;
   transition: 250ms;
 }
-.register-page {
-  padding: 5%;
-  background: linear-gradient(90deg, #fbad50 50%, #fff 50%);
-  height: 100vh;
-
-}
-.register-body {
-  width: 550px;
+ .register-body {
+  width: 750px;
   margin: 1% auto 0 auto;
   padding: 7%;
   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-.register-btn{
-  font-family: 'Joan', serif;
-  color: #fff;
-  font-size: smaller;
-  width: 150px;
-  margin: 2%;
-  background-color: #ffc273;
-  padding: 2%;
-  border: 1px solid #ffc273;
-}
-.register-btn:hover {
-  background-color: #fff;
-  color: black;
-  border: 1px solid black;
-  transition: 250ms;
 }
 .intro-text {
-  font-family: 'Joan', serif;
   color: white;
-  font-weight: bold;
-  background-repeat: no-repeat;
- 
-
+  font-weight: bold; 
 }
-.display-pic {
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 5%;
-  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
-}
-.image-display {
-  padding: 10%;
-}
-
 .post-body {
   width: 500px;
   margin: 10% auto 0 auto;
   padding: 6%;
   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
-  font-family: 'Joan', serif;
   color: #423F3E;
   font-size: smaller;
   background-color: #4c68d7;
   object-fit: cover;
 }
-
-.likey{
+.d-flex{
   text-decoration: none;
 }
 .card {
@@ -132,8 +66,7 @@ p {
   border: none;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 11px 0 rgba(0, 0, 0, 0.19);
   width: 800px;
-  height: 700px;
-  
+  height: 700px; 
 }
 .posted-image {
   width: 300px;
@@ -141,66 +74,16 @@ p {
   object-fit: cover;
   margin: 0 auto;
 }
-.comment-btn {
-  background-color: #889EAF;
-  color: #fff;
-  font-size: smaller;
-  width: 150px;
-  border: none;
-}
-.comment-btn:hover {
-  background-color: #fff;
-  color: black;
-  border: 1px solid black;
-  transition: 250ms;
-}
-.logout-page {
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items: center;
-  text-align: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh; 
-
-}
-.log-btn {
-  font-family: 'Joan', serif;
-  color: #fff;
-  font-size: smaller;
-  width: 150px;
-  margin: 2%;
-  background-color: #8a3ab9;
-  border: 1px solid #8a3ab9;
-}
-.log-btn:hover {
-  background-color: #fff;
-  color: black;
-  border: 1px solid black;
-  transition: 250ms;
-}
 .user-image {
   width: 300px;
   height: 300px;
   object-fit: cover;
-  box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.2), 0 11px 25px 0 rgba(0, 0, 0, 0.19);
-  
+  box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.2), 0 11px 25px 0 rgba(0, 0, 0, 0.19);  
 }
-
-
 .navbar {
   background-color: #bc2a8d;
-  font-family: 'Joan', serif;
   font-weight: bold;
-  font-size: smaller;
   padding: 1%;
-}
-.place {
-  font-family: 'Joan', serif;
-  color: #4c68d7;
-  font-size: smaller;
 }
 .modal-pic {
   margin: 0 auto;
@@ -231,8 +114,8 @@ p {
 .user-tag {
   text-decoration: none;
   color: #8a3ab9;
+  text-align: center;
 }
-
 .row{
   text-decoration: none;
 }
