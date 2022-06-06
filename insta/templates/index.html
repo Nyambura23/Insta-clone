@@ -3,15 +3,58 @@
 {% load static%}
 {% block content%}
 
+<!-- navbar section -->
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+    {% for profile in profiles%}
+  <img class="prof-display" src="{{profile.profile_photo.url}}" alt="">
+    {% endfor %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      {% if user.is_authenticated %}
+        <ul class="navbar-nav m-auto px-1">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index'%}"><i class="fas fa-home"></i> <span class="sr-only"></span></a>
+            </li>
+            <form class="form-inline my-2 my-lg-0 d-flex" action="{% url 'search_results' %}">
+                <input class="form-control mr-sm-2 place" name="search_user"  type="search" placeholder="Find users" aria-label="Search">
+               
+            </form>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'post' %}">New Post</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item place" href="{% url 'userprofile'%}">View Profile</a>
+                    <a class="dropdown-item place" href="{% url 'updateprofile' %}">Update Profile</a>
+                    
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+            </li>
+        </ul>
+  {% endif %}
+    </div>
+  </nav>
+<!-- end of navbar section -->
 
 <div class="container">
     <div class="row">
         {% for post in images %}
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card" style="width: 50%;">
-                <div class="d-flex justify-content-between">
-                <a class=" user-tag" href="{% url 'profile' post.user.id %}"><p class="card-text"><i class="fas px-3 fa-user-astronaut"></i>{{post.user}}</p></a>
-                <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{post.location}}</p>
+                <div class="d-flex justify-content-center">
+                <a class=" user-tag" href="{% url 'profile' post.user.id %}"><p class="card-text"><i class="fas px-3 fa-user-astronaut"></i>{{post.user}}<br>📍{{post.location}}</p></a>
+               
             </div>
                 {% if post.image %}
                 <a href="" class="text-center" data-toggle="modal" data-target="#myModal{{ post.id }}"><img
@@ -20,12 +63,10 @@
                 <p>No Image</p>
                 {% endif %}
                 <div class="card-body">
-                    <p class="card-text text-muted"><i class="far fa-calendar-alt me-2"></i>{{post.posted_at}}</p>
+                    <p class="card-text text-muted "><i class="far fa-calendar-alt me-2 " ></i>{{post.posted_at}}</p>
                     <p class="card-text text-muted">"{{post.caption}}"</p>
-                    <!-- <a href=""><i class="far fa-comment-alt me-1"></i></a> -->
                     <div class="d-flex text-center">
-                        <a href="{% url 'like' image_id=post.id%}"><i class="far fa-heart" style="color: red"></i></a>
-                        <p class="px-2 pt-1">{{post.saved_likes}}</p>
+                        <p class="likey pt-1"> <a href="{% url 'like' image_id=post.id%}" >❤️</a> {{post.saved_likes}} </p>
                     </div>
                     <form action="{% url 'comments' image_id=post.id%}" class="comment-form" method="post"
                         enctype="multipart/form-data">

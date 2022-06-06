@@ -1,0 +1,242 @@
+p {
+  color: #4c68d7;
+  font-family: 'Joan', serif;
+}
+
+.bowdy{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  height: 100vh; 
+}
+
+.login-section,
+.registration-section, .comment-form {
+  color: #423F3E;
+  font-size: smaller;
+}
+
+.login-body{
+  width: 350px;
+  margin: 15% auto 0 auto;
+  padding: 7%;
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.login-page {
+  padding: 5%;
+  background: linear-gradient(90deg, #4c68d7 50%, #fff 50%);
+  height: 100vh;
+
+}
+
+.login-pic {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.2), 0 11px 25px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 50%;
+}
+
+.login-btn {
+  font-family: 'Joan', serif;
+  color: #fff;
+  font-size: smaller;
+  width: 150px;
+  margin: 2%;
+  background-color: #fbad50;
+  padding: 2%;
+  border: 1px solid #fbad50;
+
+}
+
+.login-btn:hover {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  transition: 250ms;
+}
+.register-page {
+  padding: 5%;
+  background: linear-gradient(90deg, #fbad50 50%, #fff 50%);
+  height: 100vh;
+
+}
+.register-body {
+  width: 550px;
+  margin: 1% auto 0 auto;
+  padding: 7%;
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.register-btn{
+  font-family: 'Joan', serif;
+  color: #fff;
+  font-size: smaller;
+  width: 150px;
+  margin: 2%;
+  background-color: #ffc273;
+  padding: 2%;
+  border: 1px solid #ffc273;
+}
+.register-btn:hover {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  transition: 250ms;
+}
+.intro-text {
+  font-family: 'Joan', serif;
+  color: white;
+  font-weight: bold;
+  background-repeat: no-repeat;
+ 
+
+}
+.display-pic {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 5%;
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+}
+.image-display {
+  padding: 10%;
+}
+
+.post-body {
+  width: 500px;
+  margin: 10% auto 0 auto;
+  padding: 6%;
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Joan', serif;
+  color: #423F3E;
+  font-size: smaller;
+  background-color: #4c68d7;
+  object-fit: cover;
+}
+
+.likey{
+  text-decoration: none;
+}
+.card {
+  margin: 2% auto;
+  padding: 2%;
+  border: none;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 11px 0 rgba(0, 0, 0, 0.19);
+  width: 800px;
+  height: 700px;
+  
+}
+.posted-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+.comment-btn {
+  background-color: #889EAF;
+  color: #fff;
+  font-size: smaller;
+  width: 150px;
+  border: none;
+}
+.comment-btn:hover {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  transition: 250ms;
+}
+.logout-page {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; 
+
+}
+.log-btn {
+  font-family: 'Joan', serif;
+  color: #fff;
+  font-size: smaller;
+  width: 150px;
+  margin: 2%;
+  background-color: #8a3ab9;
+  border: 1px solid #8a3ab9;
+}
+.log-btn:hover {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  transition: 250ms;
+}
+.user-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.2), 0 11px 25px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+
+.navbar {
+  background-color: #bc2a8d;
+  font-family: 'Joan', serif;
+  font-weight: bold;
+  font-size: smaller;
+  padding: 1%;
+}
+.place {
+  font-family: 'Joan', serif;
+  color: #4c68d7;
+  font-size: smaller;
+}
+.modal-pic {
+  margin: 0 auto;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+.profile-display {
+  padding: 4%;
+  margin: 2% auto;
+}
+.prof-pic {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.prof-display {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.bio-space {
+  width: 40%;
+  margin: 2% auto;
+}
+.user-tag {
+  text-decoration: none;
+  color: #8a3ab9;
+}
+
+.row{
+  text-decoration: none;
+}
+::selection {
+  background-color: #4c68d7;
+  color: white;
+}

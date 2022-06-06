@@ -5,20 +5,16 @@
 
 <div class="container profile-display">
     <div class="row">
-        <strong><p class="text-center">PROFILE</p></strong>
+        <strong><p class="text-center">MY PROFILE</p></strong>
         {% for profile in profiles %}
         <div class="col-lg-4 col-md-6 col-sml-12">
             
-             <img class="prof-display mb-2" src="{{profile.profile_photo.url}}" alt="Update profile to view">
-           <p>{{profile.user}}</p>
-            <p><i class="far px-3 fa-file-alt"></i>{{profile.bio}}</p>
-
-            
+             <img class="prof-display mb-2" src="{{profile.profile_photo.url}}" alt="Update profile to view"> 
+            <p>{{profile.user}}</p>
+            <p>{{profile.bio}}</p>       
         </div>
         {% endfor %}
     </div>
-<hr>
-
 
 </div>
 <div class="container profile-display">
@@ -34,8 +30,6 @@
         </div>
         {% endfor %}
     </div>
-
-
 
 </div>
 
