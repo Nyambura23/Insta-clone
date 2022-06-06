@@ -37,7 +37,7 @@ p {
   border: 1px solid white;
   transition: 250ms;
 }
- .register-body {
+ .login-body, .register-body {
   width: 750px;
   margin: 1% auto 0 auto;
   padding: 7%;
@@ -54,7 +54,7 @@ p {
   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
   color: #423F3E;
   font-size: smaller;
-  background-color: #4c68d7;
+  background-color: #fbad50;
   object-fit: cover;
 }
 .d-flex{
